@@ -131,7 +131,6 @@ module.exports = {
    */
   index: (req, res, next) => {
     User.find() // index 액션에서만 퀴리 실행
-      .populate("discussions") // 사용자의 토론을 가져오기 위해 populate 메소드 사용
       .exec()
       .then((users) => {
         // 사용자 배열로 index 페이지 렌더링
