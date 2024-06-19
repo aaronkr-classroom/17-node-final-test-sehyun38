@@ -126,10 +126,10 @@ module.exports = {
   },
 
   update: (req, res, next) => {
-    let discussionID = req.params.id,
+    let discussionId = req.params.id,
     discussionParams = getDiscussionParams(req.body);
 
-    Discussion.findByIdAndUpdate(discussionID, {
+    Discussion.findByIdAndUpdate(discussionId, {
       $set: discussionParams,
     })
       .populate("author")
